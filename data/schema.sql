@@ -1,0 +1,10 @@
+DROP DATABASE IF EXISTS prices;
+
+DROP TABLE IF EXISTS prices;
+
+CREATE DATABASE prices;
+
+CREATE TABLE prices (
+  id SERIAL,
+  price INTEGER
+);
