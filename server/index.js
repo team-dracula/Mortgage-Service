@@ -52,7 +52,7 @@ app.get('/api/price/:priceId', function(req, res) {
 });
 
 
-var port = process.env.PORT || 3009;
+var port = process.env.PORT || 3008;
 
 app.listen(port, function() {
     console.log(`Server is listening on port: ${port}`);

@@ -38,9 +38,9 @@ export default class MortgageForm extends React.Component {
 
         //for development
         if ( endpoint === 1 ) {
-            url = 'http://localhost:3009/api/price'
+            url = 'http://localhost:3008/api/price'
         } else {
-            url = `http://localhost:3009/api/price${this.state.path}`;
+            url = `http://localhost:3008/api/price${this.state.path}`;
             
         }
 
