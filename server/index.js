@@ -39,11 +39,8 @@ app.get('/api/price', function(req, res) {
 });
 
 app.get('/api/price/:priceId', function(req, res) {
-    console.log(req.params.priceId)
     db.byIdgetPriceFromDB(null, req.params.priceId, function( result){ 
         // if (err) console.error(err);
-
-        console.log('/price/:priceId this is the result from the server',  result);
         // res.locals.id = req.params.priceId;
         // console.log('res.locals.id: ', res.locals.id);
         // result = util.inspect(result)
@@ -51,6 +48,9 @@ app.get('/api/price/:priceId', function(req, res) {
     });
 });
 
+app.get('/loaderio-88627c2e57ccb88863e7a8bce87e90e2/', function (req, res) {
+    res.send('./loaderio-88627c2e57ccb88863e7a8bce87e90e2.txt')
+})
 
 var port = process.env.PORT || 3008;
 
