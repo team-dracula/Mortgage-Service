@@ -8,8 +8,8 @@ node_modules/
 
 ## Webpack stuff
 config.js
-public/bundle.js
-
+client/public/bundle.js
+client/public/bundle.js.br
+client/public/bundle.js.gz
 package-lock.json
-
 data/out.csv
