@@ -16,6 +16,9 @@ app.use(express.static(path.join(__dirname, '../client/public')));
 
 app.use(cors());
 
+app.get('/loaderio-88627c2e57ccb88863e7a8bce87e90e2/', function (req, res) {
+    res.sendFile(path.join(__dirname, 'loaderio-88627c2e57ccb88863e7a8bce87e90e2.txt'))
+})
 
 app.get('/:number', function(req, res) {
     // console.log('getting here');
@@ -48,9 +51,6 @@ app.get('/api/price/:priceId', function(req, res) {
     });
 });
 
-app.get('/loaderio-88627c2e57ccb88863e7a8bce87e90e2/', function (req, res) {
-    res.sendFile(path.join(__dirname, 'loaderio-88627c2e57ccb88863e7a8bce87e90e2.txt'))
-})
 
 var port = process.env.PORT || 3008;
 
