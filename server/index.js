@@ -49,7 +49,7 @@ app.get('/api/price/:priceId', function(req, res) {
 });
 
 app.get('/loaderio-88627c2e57ccb88863e7a8bce87e90e2/', function (req, res) {
-    res.send('./loaderio-88627c2e57ccb88863e7a8bce87e90e2.txt')
+    res.sendFile('./loaderio-88627c2e57ccb88863e7a8bce87e90e2.txt')
 })
 
 var port = process.env.PORT || 3008;
