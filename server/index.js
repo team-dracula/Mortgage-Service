@@ -1,9 +1,10 @@
 var express = require('express');
 var morgan = require('morgan');
 var bodyParser = require('body-parser');
-var db = require('../model/queryDB.js');
+var db = require('../model/queryMongo.js');
 var path = require('path');
 var cors = require('cors');
+var util = require('util')
 
 var app = express();
 
@@ -38,17 +39,20 @@ app.get('/api/price', function(req, res) {
 });
 
 app.get('/api/price/:priceId', function(req, res) {
-    db.byIdgetPriceFromDB(null, req.params.priceId, function(result){ 
-        console.log('/price/:priceId this is the result from the server', result);
-        res.locals.id = req.params.priceId;
-        console.log('res.locals.id: ', res.locals.id);
-        
+    console.log(req.params.priceId)
+    db.byIdgetPriceFromDB(null, req.params.priceId, function( result){ 
+        // if (err) console.error(err);
+
+        console.log('/price/:priceId this is the result from the server',  result);
+        // res.locals.id = req.params.priceId;
+        // console.log('res.locals.id: ', res.locals.id);
+        // result = util.inspect(result)
         res.send(result);
     });
 });
 
 
-var port = process.env.PORT || 3008;
+var port = process.env.PORT || 3009;
 
 app.listen(port, function() {
     console.log(`Server is listening on port: ${port}`);

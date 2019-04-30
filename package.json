@@ -1,5 +1,5 @@
 {
-  "name": "Mortgage-Service",
+  "name": "mortgageservice",
   "version": "1.0.0",
   "description": "",
   "main": "index.js",
@@ -31,6 +31,7 @@
     "express": "^4.13.4",
     "faker": "^4.1.0",
     "lodash": "^4.2.1",
+    "mongodb": "^3.2.3",
     "morgan": "^1.9.1",
     "react-countup": "^4.1.3",
     "react-minimal-pie-chart": "^3.5.0"
@@ -46,7 +47,6 @@
     "jsdom-quokka-plugin": "^1.0.14",
     "react": "^16.8.6",
     "react-dom": "^16.8.6",
-    "sqlite3": "^4.0.6",
     "webpack": "^4.29.6",
     "webpack-cli": "^3.3.0"
   },

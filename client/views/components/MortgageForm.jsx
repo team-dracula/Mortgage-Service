@@ -32,17 +32,19 @@ export default class MortgageForm extends React.Component {
     }
 
     componentDidMount() {
-        var that = this;
+        // var that = this;
         var url;
         var endpoint = this.state.path === '/' ? 1 : this.state.path; 
 
         //for development
         if ( endpoint === 1 ) {
-            url = 'http://localhost:3008/api/price'
+            url = 'http://localhost:3009/api/price'
         } else {
-            url = `http://localhost:3008/api/price${this.state.path}`;
+            url = `http://localhost:3009/api/price${this.state.path}`;
             
         }
+
+
         // for deployment
         // if ( endpoint === 1 ) {
         //     url = 'http://18.188.36.91:3008/api/price'
@@ -50,25 +52,24 @@ export default class MortgageForm extends React.Component {
         //     url = `http://18.188.36.91:3008/api/price${this.state.path}`;
         // }
 
-        axios.get(url).then(function(response) {
-
-            var hpfields = inputController.calculateFieldsHomePrice(response.data.price, that);
-            console.log('inputController: ', inputController);
-        
-            that.setState({
+        axios.get(url)
+        .then((response) => {
+            var hpfields = inputController.calculateFieldsHomePrice(response.data.price, this);
+            this.setState({
                 mortgageFields : {
                     homePrice: response.data.price,
                     downPayment: hpfields.downPayment,
-                    downPaymentPerc: that.state.mortgageFields.downPaymentPerc,
-                    loanProgram: that.state.mortgageFields.loanProgram,
-                    interestRate: that.state.mortgageFields.interestRate,
+                    downPaymentPerc: this.state.mortgageFields.downPaymentPerc,
+                    loanProgram: this.state.mortgageFields.loanProgram,
+                    interestRate: this.state.mortgageFields.interestRate,
                     propertyTax: hpfields.propertyTax,
-                    propertyTaxPerc: that.state.mortgageFields.propertyTaxPerc,
-                    homeInsurance: that.state.mortgageFields.homeInsurance,
-                    hoaDues: that.state.mortgageFields.hoaDues
+                    propertyTaxPerc: this.state.mortgageFields.propertyTaxPerc,
+                    homeInsurance: this.state.mortgageFields.homeInsurance,
+                    hoaDues: this.state.mortgageFields.hoaDues
                 }
             })
-        }).catch((err)=>console.error('componentDidMount',err));
+        })
+        .catch((err)=>console.error('componentDidMount',err));
     }
 
     returnState() {
