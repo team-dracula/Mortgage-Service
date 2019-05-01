@@ -13,6 +13,7 @@
   "author": "Brett Cunningham II",
   "license": "ISC",
   "dependencies": {
+    "acorn": "^6.1.1",
     "axios": "^0.18.0",
     "cors": "^2.8.5",
     "d3": "^3.5.16",

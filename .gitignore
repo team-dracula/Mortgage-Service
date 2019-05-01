@@ -1,6 +1,7 @@
 ## MAC files ##
 .DS_Store
-
+## env ##
+.env
 ## NPM ##
 npm
 npm-debug.log
@@ -8,8 +9,10 @@ node_modules/
 
 ## Webpack stuff
 config.js
-client/public/bundle.js
 client/public/bundle.js.br
 client/public/bundle.js.gz
 package-lock.json
 data/out.csv
+client/public/bundle.js
+Dockerfile
+.dockerignore
