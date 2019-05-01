@@ -9,10 +9,7 @@ node_modules/
 
 ## Webpack stuff
 config.js
-client/public/bundle.js.br
-client/public/bundle.js.gz
 package-lock.json
 data/out.csv
-client/public/bundle.js
 Dockerfile
 .dockerignore
